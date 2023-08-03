@@ -1,0 +1,42 @@
+.reel {
+    font-size: 48px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #696868;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* Permite posicionar los símbolos dentro de los cuadros */
+}
+
+.reel .reel-content {
+    opacity: 0;
+    /* Inicialmente, los símbolos están ocultos */
+}
+
+.reel.animate .reel-content {
+    animation: fadeInDown 0.5s ease-in-out;
+    /* Animación al mostrar el símbolo */
+    animation-fill-mode: forwards;
+    /* Mantiene el último estado de la animación */
+}
+
+.slot-machine {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Definir la animación de fade-in-down */
+@keyframes fadeInDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
